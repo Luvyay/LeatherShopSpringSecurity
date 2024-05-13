@@ -1,0 +1,180 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*
+Настройка стилей для шапки
+*/
+
+.header {
+    margin:0 auto;
+    height: 200px;
+    width: 1110px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+$primary: hsl(260, 100%, 80%);
+
+nav,
+.nav-item {
+	display: flex;
+}
+
+nav {
+	border-radius: 6px;
+	background-image: linear-gradient(
+		rgb(48, 48, 48) 13%,
+		rgb(30, 30, 30) 40%,
+		#0c0d11 86%
+	);
+	color: rgba(255, 255, 255, 0.6);
+	text-shadow: 0 -2px 0 black;
+	cursor: pointer;
+	box-shadow: 1px 2px 4px rgb(20, 20, 20), 0 4px 12px rgb(10, 10, 10);
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav-item {
+	flex-direction: row-reverse;
+	font-size: 0.8999rem;
+	line-height: 1rem;
+	align-items: center;
+	min-width: 120px;
+	justify-content: space-between;
+	transition: all 80ms ease;
+
+	&.active {
+		color: $primary;
+		text-shadow: 0 0 3px hsla(260, 100%, 70%, 0.7);
+	}
+
+	&:not(.active):hover {
+		color: rgba(255, 255, 255, 0.87);
+	}
+
+	&:not(:first-of-type) {
+		border-left: 1px solid rgb(60, 60, 60);
+	}
+	&:not(:last-of-type) {
+		border-right: 0.1rem solid black;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+		padding: 1ch;
+	}
+
+	.icon {
+		padding: 1ch;
+		position: relative;
+	}
+
+	.icon > svg {
+		max-width: 16px;
+	}
+
+
+}
+
+
+/*
+ Настройка стилей для блока контента
+*/
+
+.wrapper {
+    margin:0 auto;
+    width: 1110px;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: rgba(196, 196, 196, 0.19);
+    border-radius: 5px;
+}
+
+.wrap_card {
+    margin: 10px;
+    width: 350px;
+}
+
+.card {
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.img_area, .img_area img {
+    height: 300px;
+    width: 300px;
+}
+
+.text_area {
+    display: flex;
+    width: 300px;
+    height: 100px;
+}
+
+.left {
+    float: left;
+    padding: 15px;
+    width: 75%;
+}
+
+.title_card {
+    color: #31353d;
+    font-size: 20px;
+}
+
+.left p {
+    padding: 0px;
+    margin: 0px;
+    color: #aaa;
+    font-size: 13.6px;
+}
+
+.right {
+    float: right;
+    position: relative;
+    padding-top: 25px;
+    padding-right: 5px;
+}
+
+.price {
+    font-size: 26px;
+    text-align: center;
+    color: #9bb6aa;
+}
+
+.sidebar {
+    height: 400px;
+    width: 50px;
+    background: #31353d;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+    opacity: 0;
+    border-radius: 0 2px 2px 0;
+}
+
+.wrap_card:hover .sidebar {
+    transform: translateX(50px);
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.buy {
+    background: transparent url("https://raw.githubusercontent.com/brunodsgn/productpreview/master/assets/img/icons/buy.png") no-repeat 12px;
+    width: 50px;
+    height: 50px;
+    padding: 0.9em;
+}
